@@ -1,0 +1,11 @@
+#+TITLE: uGens
+* uGens Notes
+*** links:
+- A webpage guide to writing uGens ~ http://doc.sccode.org/Guides/WritingUGens.html
+- A git repo dedicated to showing basic examples of uGens, with a readme ~
+  https://github.com/supercollider/example-plugins
+** continue notes
+- 230120 keep on section 2 of
+  https://github.com/supercollider/example-plugins/blob/master/README.md/ , was
+  having trouble setting the cmake -DSC_PATH= ... think it's a windows specific
+  issue.
