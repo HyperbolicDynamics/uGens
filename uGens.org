@@ -9,3 +9,7 @@
   https://github.com/supercollider/example-plugins/blob/master/README.md/ , was
   having trouble setting the cmake -DSC_PATH= ... think it's a windows specific
   issue.
+- 240120 success, i had to append / to the path decleration in the makefile.txt
+  for it to work on windows, also had to declare path as /mnt/c/users/..... the
+  make command spat out a .so file though so i think it might have compiled for
+  linux.. checking
