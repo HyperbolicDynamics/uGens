@@ -40,33 +40,39 @@ The UGen outputs the six individual oscillator signals.
 code::
 (
 {
-	var ctls, mods, chans;
-	ctls = [
-		// freq, phase, amp
-		[LFNoise1.kr(0.5).range(300, 310), 0, 1],
-		[LFNoise1.kr(0.5).exprange(3, 310), 0, 1],
-		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
-		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
-		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
-		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
-        [LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
-		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
-		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1]
-	];
-     mods = [
-		[Line.kr(0, 0.001, 2), Line.kr(0.1, 0, 4), 0, MouseY.kr(0, 6), 0, 0],
-		[MouseX.kr(0, 6), 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0]
-	];
-	chans = [0, 1];
-	FM7.ar(ctls, mods).slice(chans) * -12.dbamp; // using "slice" to select specific channels.. ie. slice(8) would output the 9th operators voice only.
+var ctls, mods, chans;
+ctls = [
+// freq, phase, amp
+[LFNoise1.kr(0.5).range(300, 310), 0, 1],
+[LFNoise1.kr(0.5).exprange(3, 310), 0, 1],
+[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+[LFNoise1.kr(0.5).range(300, 310), 0, 1],
+[LFNoise1.kr(0.5).exprange(3, 310), 0, 1],
+[LFNoise1.kr(0.5).exprange(3, 100), 0, 1]
+
+
+
+];
+mods = [
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+];
+chans = [0, 1];
+FM9.ar(ctls, mods).slice(chans) * -12.dbamp; // using "slice" to select specific channels.. ie. slice(8) would output the 9th operators voice only.
+
 }.play;
+
 )
 ::
 
